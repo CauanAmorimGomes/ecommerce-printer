@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRINTX — Impressoras de Alta Performance</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg" id="toastMsg">Produto adicionado ao carrinho</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">PX</span>
+        <span class="logo-text">PRINT<em>X</em></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#produtos" class="nav-link" data-label="Produtos">Produtos</a>
+        <a href="#categorias" class="nav-link" data-label="Categorias">Categorias</a>
+        <a href="#sobre" class="nav-link" data-label="Sobre">Sobre</a>
+        <a href="#contato" class="nav-link" data-label="Contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Buscar">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cartBtn" aria-label="Carrinho">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar" id="searchBar">
+      <div class="search-inner">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Buscar impressoras, modelos, marcas..." id="searchInput" autocomplete="off" />
+        <button class="search-close" id="searchClose">ESC</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-ticker">
+      <div class="ticker-track">
+        <span>QUALIDADE PROFISSIONAL</span><span class="sep">///</span>
+        <span>ENTREGA EXPRESSA</span><span class="sep">///</span>
+        <span>SUPORTE 24H</span><span class="sep">///</span>
+        <span>GARANTIA ESTENDIDA</span><span class="sep">///</span>
+        <span>MELHOR PREÇO</span><span class="sep">///</span>
+        <span>QUALIDADE PROFISSIONAL</span><span class="sep">///</span>
+        <span>ENTREGA EXPRESSA</span><span class="sep">///</span>
+        <span>SUPORTE 24H</span><span class="sep">///</span>
+        <span>GARANTIA ESTENDIDA</span><span class="sep">///</span>
+        <span>MELHOR PREÇO</span><span class="sep">///</span>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow">— Tecnologia de ponta</p>
+        <h1 class="hero-title">
+          <span class="line">IMPRIMA</span>
+          <span class="line accent">O FUTURO</span>
+          <span class="line">AGORA.</span>
+        </h1>
+        <p class="hero-desc">Impressoras profissionais para escritório, gráfica e uso doméstico. Velocidade, precisão e durabilidade em um só lugar.</p>
+        <div class="hero-cta">
+          <a href="#produtos" class="btn btn-primary">Ver Catálogo</a>
+          <a href="#categorias" class="btn btn-ghost">Explorar Categorias</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>+12k</strong><span>Clientes</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><strong>98%</strong><span>Satisfação</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><strong>+200</strong><span>Modelos</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card-main">
+          <div class="hc-tag">MAIS VENDIDO</div>
+          <div class="hc-printer">
+            <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="printer-svg">
+              <!-- Body -->
+              <rect x="30" y="70" width="220" height="100" rx="12" fill="#1a1a2e" stroke="#e63946" stroke-width="1.5"/>
+              <!-- Top tray -->
+              <rect x="60" y="30" width="160" height="45" rx="8" fill="#16213e" stroke="#e63946" stroke-width="1.5"/>
+              <!-- Paper slot -->
+              <rect x="80" y="68" width="120" height="6" rx="3" fill="#e63946" opacity="0.7"/>
+              <!-- Output tray -->
+              <rect x="55" y="165" width="170" height="18" rx="6" fill="#16213e" stroke="#aaa" stroke-width="1"/>
+              <!-- Paper coming out -->
+              <rect x="85" y="162" width="110" height="22" rx="3" fill="white" opacity="0.9"/>
+              <!-- Screen -->
+              <rect x="175" y="90" width="52" height="38" rx="6" fill="#0f3460" stroke="#e63946" stroke-width="1"/>
+              <rect x="179" y="94" width="44" height="30" rx="4" fill="#1a1a4e"/>
+              <rect x="183" y="100" width="36" height="4" rx="2" fill="#e63946" opacity="0.8"/>
+              <rect x="183" y="108" width="24" height="3" rx="1.5" fill="#aaa" opacity="0.5"/>
+              <rect x="183" y="114" width="30" height="3" rx="1.5" fill="#aaa" opacity="0.4"/>
+              <!-- Buttons -->
+              <circle cx="52" cy="100" r="6" fill="#e63946"/>
+              <circle cx="52" cy="120" r="6" fill="#444" stroke="#666" stroke-width="1"/>
+              <circle cx="52" cy="140" r="6" fill="#444" stroke="#666" stroke-width="1"/>
+              <!-- Vent slits -->
+              <line x1="100" y1="88" x2="100" y2="158" stroke="#333" stroke-width="1" opacity="0.5"/>
+              <line x1="113" y1="88" x2="113" y2="158" stroke="#333" stroke-width="1" opacity="0.5"/>
+              <line x1="126" y1="88" x2="126" y2="158" stroke="#333" stroke-width="1" opacity="0.5"/>
+              <line x1="139" y1="88" x2="139" y2="158" stroke="#333" stroke-width="1" opacity="0.5"/>
+              <line x1="152" y1="88" x2="152" y2="158" stroke="#333" stroke-width="1" opacity="0.5"/>
+              <!-- Glow -->
+              <ellipse cx="140" cy="190" rx="80" ry="10" fill="#e63946" opacity="0.15"/>
+            </svg>
+          </div>
+          <div class="hc-info">
+            <span class="hc-name">HP LaserJet Pro X</span>
+            <span class="hc-price">R$ 1.299<small>,90</small></span>
+          </div>
+        </div>
+        <div class="hero-card-side">
+          <div class="hcs-item">
+            <span class="hcs-dot"></span>
+            <div>
+              <strong>40 ppm</strong>
+              <small>Velocidade</small>
+            </div>
+          </div>
+          <div class="hcs-item">
+            <span class="hcs-dot accent2"></span>
+            <div>
+              <strong>Wi-Fi</strong>
+              <small>Conectividade</small>
+            </div>
+          </div>
+          <div class="hcs-item">
+            <span class="hcs-dot accent3"></span>
+            <div>
+              <strong>1200 dpi</strong>
+              <small>Resolução</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- BANNER STRIP -->
+  <div class="banner-strip">
+    <div class="bs-item">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <span>Frete grátis acima de R$500</span>
+    </div>
+    <div class="bs-sep">/</div>
+    <div class="bs-item">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>Garantia de 2 anos</span>
+    </div>
+    <div class="bs-sep">/</div>
+    <div class="bs-item">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Suporte especializado</span>
+    </div>
+    <div class="bs-sep">/</div>
+    <div class="bs-item">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      <span>Parcelamento em 12x sem juros</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIAS -->
+  <section class="categorias" id="categorias">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">// 01</p>
+        <h2 class="section-title">Categorias</h2>
+        <p class="section-sub">Encontre o modelo ideal para cada necessidade</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card" data-filter="laser">
+          <div class="cat-icon">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="18" width="44" height="30" rx="6" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="10" width="28" height="12" rx="4" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/><rect x="20" y="46" width="20" height="6" rx="2" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="1.5"/><rect x="22" y="44" width="16" height="8" rx="2" fill="white" opacity="0.8"/><circle cx="14" cy="29" r="3" fill="currentColor"/><rect x="22" y="27" width="20" height="3" rx="1.5" fill="currentColor" opacity="0.4"/><rect x="22" y="33" width="14" height="2" rx="1" fill="currentColor" opacity="0.3"/></svg>
+          </div>
+          <h3>Laser</h3>
+          <p>Alta velocidade e precisão para ambientes corporativos</p>
+          <span class="cat-count">48 produtos</span>
+        </div>
+        <div class="cat-card" data-filter="inkjet">
+          <div class="cat-icon">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="8" y="22" width="44" height="26" rx="6" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/><rect x="18" y="12" width="24" height="14" rx="4" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/><rect x="22" y="46" width="16" height="6" rx="2" fill="white" opacity="0.8"/><circle cx="30" cy="35" r="8" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="1.5"/><circle cx="30" cy="35" r="4" fill="currentColor" opacity="0.15"/><line x1="30" y1="27" x2="30" y2="43" stroke="currentColor" stroke-width="1.5"/><line x1="22" y1="35" x2="38" y2="35" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Inkjet</h3>
+          <p>Cores vibrantes para fotos e documentos coloridos</p>
+          <span class="cat-count">62 produtos</span>
+        </div>
+        <div class="cat-card" data-filter="multifuncional">
+          <div class="cat-icon">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="6" y="18" width="48" height="32" rx="6" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="10" width="32" height="12" rx="4" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/><rect x="40" y="20" width="10" height="8" rx="2" fill="currentColor" opacity="0.2"/><rect x="10" y="22" width="24" height="16" rx="3" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="1"/><rect x="18" y="47" width="24" height="5" rx="2" fill="white" opacity="0.8"/></svg>
+          </div>
+          <h3>Multifuncional</h3>
+          <p>Impressão, cópia e digitalização em um único aparelho</p>
+          <span class="cat-count">35 produtos</span>
+        </div>
+        <div class="cat-card" data-filter="grafica">
+          <div class="cat-icon">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="4" y="20" width="52" height="28" rx="6" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="12" width="32" height="12" rx="4" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="46" width="28" height="6" rx="2" fill="white" opacity="0.8"/><rect x="20" y="28" width="20" height="12" rx="2" fill="currentColor" opacity="0.2"/><line x1="20" y1="31" x2="40" y2="31" stroke="currentColor" stroke-width="1"/><line x1="20" y1="34" x2="36" y2="34" stroke="currentColor" stroke-width="1"/><line x1="20" y1="37" x2="38" y2="37" stroke="currentColor" stroke-width="1"/></svg>
+          </div>
+          <h3>Gráfica</h3>
+          <p>Para produção em larga escala com qualidade profissional</p>
+          <span class="cat-count">19 produtos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section class="produtos" id="produtos">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">// 02</p>
+        <h2 class="section-title">Catálogo</h2>
+        <p class="section-sub">Mais de 200 modelos disponíveis</p>
+      </div>
+
+      <!-- FILTERS + SORT -->
+      <div class="toolbar">
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">Todos</button>
+          <button class="filter-tab" data-filter="laser">Laser</button>
+          <button class="filter-tab" data-filter="inkjet">Inkjet</button>
+          <button class="filter-tab" data-filter="multifuncional">Multifuncional</button>
+          <button class="filter-tab" data-filter="grafica">Gráfica</button>
+        </div>
+        <div class="sort-group">
+          <label>Ordenar:</label>
+          <select id="sortSelect">
+            <option value="default">Relevância</option>
+            <option value="price-asc">Menor Preço</option>
+            <option value="price-desc">Maior Preço</option>
+            <option value="rating">Melhor Avaliado</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID -->
+      <div class="product-grid" id="productGrid">
+        <!-- Preenchido via JS -->
+      </div>
+
+      <div class="load-more-wrap">
+        <button class="btn btn-outline" id="loadMore">Carregar mais produtos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES / BANNER CTA -->
+  <section class="promo-banner">
+    <div class="pb-content">
+      <p class="pb-tag">OFERTA LIMITADA</p>
+      <h2>Até <span>30% OFF</span> em impressoras selecionadas</h2>
+      <p>Aproveite as melhores ofertas em impressoras laser e inkjet. Estoque limitado!</p>
+      <a href="#produtos" class="btn btn-primary">Ver Ofertas</a>
+    </div>
+    <div class="pb-deco">
+      <div class="pb-circle c1"></div>
+      <div class="pb-circle c2"></div>
+      <div class="pb-circle c3"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="container sobre-grid">
+      <div class="sobre-text">
+        <p class="section-eyebrow">// 03</p>
+        <h2 class="section-title">Por que a<br>PRINT<em>X</em>?</h2>
+        <p>Somos especialistas em soluções de impressão desde 2008. Atendemos pequenas empresas, grandes corporações e profissionais criativos com o mesmo nível de excelência.</p>
+        <ul class="sobre-list">
+          <li>
+            <span class="sl-num">01</span>
+            <div><strong>Curadoria técnica rigorosa</strong><p>Cada produto é testado antes de entrar no catálogo</p></div>
+          </li>
+          <li>
+            <span class="sl-num">02</span>
+            <div><strong>Consultores especializados</strong><p>Time técnico para ajudar na escolha certa</p></div>
+          </li>
+          <li>
+            <span class="sl-num">03</span>
+            <div><strong>Pós-venda real</strong><p>Suporte ativo, não apenas um e-mail de confirmação</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="sobre-visual">
+        <div class="sv-counter-grid">
+          <div class="sv-counter">
+            <strong class="counter" data-target="15">0</strong>
+            <span>anos no mercado</span>
+          </div>
+          <div class="sv-counter">
+            <strong class="counter" data-target="12000">0</strong>
+            <span>clientes ativos</span>
+          </div>
+          <div class="sv-counter">
+            <strong class="counter" data-target="200">0</strong>
+            <span>modelos em estoque</span>
+          </div>
+          <div class="sv-counter">
+            <strong class="counter" data-target="98">0</strong>
+            <span>% de satisfação</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">// 04</p>
+        <h2 class="section-title">Fale Conosco</h2>
+        <p class="section-sub">Tire suas dúvidas ou solicite um orçamento personalizado</p>
+      </div>
+      <div class="contato-grid">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+              <span class="form-error" id="nomeError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+              <span class="form-error" id="emailError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto">
+              <option value="">Selecione...</option>
+              <option value="orcamento">Solicitar Orçamento</option>
+              <option value="suporte">Suporte Técnico</option>
+              <option value="pedido">Acompanhar Pedido</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva sua necessidade..." required></textarea>
+            <span class="form-error" id="mensagemError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span>Enviar Mensagem</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+        <div class="contato-info">
+          <div class="ci-item">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><strong>Endereço</strong><p>Av. Paulista, 1000 — São Paulo, SP</p></div>
+          </div>
+          <div class="ci-item">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><strong>Telefone</strong><p>(11) 4002-8922</p></div>
+          </div>
+          <div class="ci-item">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <div><strong>E-mail</strong><p>contato@printx.com.br</p></div>
+          </div>
+          <div class="ci-item">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div><strong>Horário</strong><p>Seg–Sex: 08h às 18h</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-mark">PX</span>
+            <span class="logo-text">PRINT<em>X</em></span>
+          </a>
+          <p>Especialistas em soluções de impressão profissional desde 2008.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Produtos</h4>
+          <ul>
+            <li><a href="#">Impressoras Laser</a></li>
+            <li><a href="#">Impressoras Inkjet</a></li>
+            <li><a href="#">Multifuncionais</a></li>
+            <li><a href="#">Gráficas Profissionais</a></li>
+            <li><a href="#">Consumíveis</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#">Blog técnico</a></li>
+            <li><a href="#">Trabalhe conosco</a></li>
+            <li><a href="#">Imprensa</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">Central de ajuda</a></li>
+            <li><a href="#">Política de troca</a></li>
+            <li><a href="#">Rastrear pedido</a></li>
+            <li><a href="#contato">Fale conosco</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 PRINTX. Todos os direitos reservados.</p>
+        <div class="payment-icons">
+          <span>Visa</span><span>Master</span><span>Pix</span><span>Boleto</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cs-header">
+      <h3>Carrinho</h3>
+      <button class="icon-btn" id="cartClose">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cs-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <svg width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <p>Seu carrinho está vazio</p>
+        <a href="#produtos" class="btn btn-primary" id="cartShopLink">Ver produtos</a>
+      </div>
+      <ul class="cart-items" id="cartItems"></ul>
+    </div>
+    <div class="cs-footer" id="csFooter">
+      <div class="cs-total">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">Finalizar Compra</button>
+    </div>
+  </aside>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="product-modal" id="productModal">
+      <button class="modal-close" id="modalClose">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
